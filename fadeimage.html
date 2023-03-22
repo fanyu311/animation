@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes fade {
+            0% {
+                opacity: 0.1;
+            }
+
+            25% {
+                opacity: 1;
+            }
+
+            75% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.1;
+            }
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 4s;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        #slider {
+            max-width: 720px;
+            position: relative;
+            margin: auto;
+        }
+
+        #slider img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="slider">
+        <div class="mySlides fade">
+            <img src="img/Doraemon.png" alt="photo">
+        </div>
+        <div class="mySlides fade">
+            <img src="img/JzfSoN2.png" alt="photo">
+        </div>
+        <div class="mySlides fade">
+            <img src="img/Doraemon-3.png" alt="photo">
+        </div>
+        <div class="mySlides fade">
+            <img src="img/Doraemon-4.jpg" alt="photo">
+        </div>
+    </div>
+    <script>
+        // on déclare les variables
+        let slideIndex = 0;
+        let slides = document.getElementsByClassName("mySlides");
+        // on débug pour controler
+        console.log("tableau des slides", slides);
+
+        // on défnit une fonction
+        function showSlides() {
+            // On fait disparaitre tous les slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            // On affiche le slide courant
+            slides[slideIndex].style.display = "block";
+            // on débug pour connaitre l'index courant
+            console.log("valeur de l'index", slideIndex);
+            // On incremente l'index courant
+            slideIndex++;
+            //si slideIndex est supérieur à la longueur du tableau
+            // on le remet à zéro
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            // On utilise la fonction dans un timeout
+            setTimeout(showSlides, 4000);
+
+        }
+
+        showSlides();
+
+    </script>
+</body>
+
+</html>

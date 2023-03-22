@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            /* animation-name: animPourcent;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-delay: 4s;
+            animation-timing-function: ease-in-out; */
+            animation: animPourcent 4s ease-in-out 0s infinite alternate-reverse none;
+        }
+
+        h1 {
+            animation-name: anim;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-delay: 4s;
+            animation-direction: alternate;
+        }
+
+        @keyframes anim {
+            from {
+                background-color: red;
+                width: 100px;
+
+            }
+
+            to {
+                background-color: yellow;
+                width: 500px;
+
+            }
+        }
+
+        @keyframes animPourcent {
+            0% {
+                background-color: rgb(46, 180, 64);
+                width: 100px;
+
+            }
+
+            50% {
+                background-color: rgb(69, 80, 231);
+                width: 300px;
+
+            }
+
+            75% {
+                background-color: rgb(221, 145, 58);
+                width: 500px;
+
+            }
+
+            100% {
+                background-color: rgb(170, 27, 106);
+                width: 100px;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HELLO ANIMATION</h1>
+    <div></div>
+
+</body>
+
+</html>
